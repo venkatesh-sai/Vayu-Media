@@ -1963,3 +1963,152 @@ img{
   }
 
 }
+/* COOKIE POPUP */
+
+.cookie-popup{
+  position:fixed;
+  bottom:3vh;
+  right:2vw;
+  width:28vw;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(1vw);
+  border-radius:1.5vw;
+  padding:2vh 1.5vw;
+  box-shadow:0 1vh 4vw rgba(0,0,0,0.15);
+  z-index:9999;
+  animation:cookieSlide 1s ease;
+  border:0.1vw solid #f3e8ff;
+}
+
+.cookie-content{
+  display:flex;
+  flex-direction:column;
+  gap:2vh;
+}
+
+.cookie-top{
+  display:flex;
+  gap:1vw;
+  align-items:flex-start;
+}
+
+.cookie-icon{
+  font-size:2vw;
+  animation:floatCookie 3s infinite ease-in-out;
+}
+
+.cookie-text h3{
+  font-size:1.3vw;
+  color:#5f00d9;
+  margin-bottom:1vh;
+}
+
+.cookie-text p{
+  font-size:0.95vw;
+  line-height:1.8;
+  color:#4b5563;
+}
+
+/* BUTTONS */
+
+.cookie-buttons{
+  display:flex;
+  gap:1vw;
+}
+
+.cookie-buttons button{
+  flex:1;
+  padding:1.4vh;
+  border:none;
+  border-radius:5vw;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+/* ACCEPT */
+
+.cookie-accept{
+  background:linear-gradient(90deg,#ff6b00,#8b00ff);
+  color:white;
+}
+
+.cookie-accept:hover{
+  transform:translateY(-0.3vh) scale(1.03);
+  box-shadow:0 1vh 2vw rgba(139,0,255,0.25);
+}
+
+/* DENY */
+
+.cookie-deny{
+  background:#f3f4f6;
+  color:#111827;
+}
+
+.cookie-deny:hover{
+  background:#e5e7eb;
+  transform:translateY(-0.3vh);
+}
+
+/* ANIMATIONS */
+
+@keyframes cookieSlide{
+
+  from{
+    opacity:0;
+    transform:translateY(5vh);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes floatCookie{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-0.5vh);
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .cookie-popup{
+    width:90%;
+    right:5%;
+    bottom:2vh;
+    border-radius:5vw;
+    padding:2vh 5vw;
+    transition:0.4s ease;
+  }
+
+  .cookie-top{
+    gap:4vw;
+  }
+
+  .cookie-icon{
+    font-size:8vw;
+  }
+
+  .cookie-text h3{
+    font-size:5vw;
+  }
+
+  .cookie-text p{
+    font-size:3.8vw;
+  }
+
+  .cookie-buttons{
+    flex-direction:column;
+  }
+
+}

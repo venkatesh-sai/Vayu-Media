@@ -60,22 +60,47 @@
       </div>
     </div>
 
-<form class="contact-form" onsubmit="showMessage(event)">
+<form 
+  class="contact-form"
+  id="contactForm"
+>
+
+  <input 
+    type="hidden" 
+    name="access_key" 
+    value="521f8d75-d8a8-455c-9fc0-00e52f879cd2"
+  >
+
+  <input 
+    type="hidden" 
+    name="subject" 
+    value="New Lead From Vayu Media Website"
+  >
 
   <input 
     type="text" 
+    name="name"
     placeholder="Full Name" 
     required
   >
 
   <input 
+    type="tel" 
+    name="mobile"
+    placeholder="Mobile Number" 
+    required
+  >
+
+  <input 
     type="email" 
+    name="email"
     placeholder="Email Address" 
     required
   >
 
   <textarea 
     rows="5" 
+    name="message"
     placeholder="Message" 
     required
   ></textarea>
@@ -85,7 +110,6 @@
   </button>
 
 </form>
-
   </div>
 
 </section>
@@ -180,7 +204,8 @@
       <ul class="footer-contact">
 
         <li>
-          📍 Vijayawada, Andhra Pradesh
+          📍 3a black Ground floor VAYUMEDIA Office   
+           SMR Vinay Fountainhead Haider Nagar Near Kalvari Temple
         </li>
 
         <li>
@@ -188,7 +213,7 @@
         </li>
 
         <li>
-          📧 support@vayumedia.com
+          📧 Info@vmsecurities.com
         </li>
 
       </ul>
