@@ -112,54 +112,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", async function(e){
+if(form){
 
-  e.preventDefault();
+  form.addEventListener("submit", async function(e){
 
-  const formData = new FormData(form);
+    e.preventDefault();
 
-  const object = Object.fromEntries(formData);
+    const formData = new FormData(form);
 
-  const json = JSON.stringify(object);
+    const object = Object.fromEntries(formData);
 
-  try{
+    const json = JSON.stringify(object);
 
-    const response = await fetch(
-      "https://api.web3forms.com/submit",
-      {
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
-          "Accept":"application/json"
-        },
-        body:json
+    try{
+
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json",
+            "Accept":"application/json"
+          },
+          body:json
+        }
+      );
+
+      const result = await response.json();
+
+      if(result.success){
+
+        alert("Thank You! Your request has been submitted successfully.");
+
+        form.reset();
+
       }
-    );
 
-    const result = await response.json();
+      else{
 
-    if(result.success){
+        alert("Something went wrong!");
 
-      alert("Thank You! Your request has been submitted successfully.");
+      }
 
-      // CLEAR FORM AFTER SUCCESS
+    }
 
-      form.reset();
+    catch(error){
+
+      alert("Error submitting form!");
+
+    }
+
+  });
+
+}
+document.addEventListener("DOMContentLoaded", () => {
+
+  const menuToggle = document.getElementById("menuToggle");
+
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuToggle.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("active");
+
+    if(mobileMenu.classList.contains("active")){
+
+      menuToggle.innerHTML = "✕";
 
     }
 
     else{
 
-      alert("Something went wrong!");
+      menuToggle.innerHTML = "☰";
 
     }
 
-  }
-
-  catch(error){
-
-    alert("Error submitting form!");
-
-  }
+  });
 
 });
